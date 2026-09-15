@@ -73,8 +73,13 @@ A logo listed in `logos.json` with no file under `public/` shows as *pending* on
 ```
 app/
   page.js               gallery, built from data/logos.json
-  bg-picker.js          client-side canvas colour picker
   download/route.js     static zip of every exported logo
+  opengraph-image.js    social preview card
+components/
+  logo.js               wordmark
+  logo-dialog.js        tile preview with download / copy
+  bg-picker.js          canvas background swatches
+  theme-toggle.js       light / dark switch
 assets/                 source SVGs (banks, cards, upi)
 data/logos.json         categories, slugs, names, asset paths
 public/                 exported svg + png per category

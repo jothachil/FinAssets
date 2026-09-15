@@ -1,10 +1,10 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import categories from "@/data/logos.json";
-import BgPicker from "./bg-picker";
-import Logo from "./logo";
-import LogoDialog from "./logo-dialog";
-import ThemeToggle from "./theme-toggle";
+import BgPicker from "@/components/bg-picker";
+import Logo from "@/components/logo";
+import LogoDialog from "@/components/logo-dialog";
+import ThemeToggle from "@/components/theme-toggle";
 
 const label =
   "block px-4 pb-2 font-mono text-xs leading-none tracking-[0.01em] text-dim";
