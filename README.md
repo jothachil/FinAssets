@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# fin-logos
 
-## Getting Started
+Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, available as `svg` and `png`.
 
-First, run the development server:
+Every logo is trimmed, centred and exported on a 300×300 transparent canvas with 30px padding, so any two line up pixel for pixel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Category | Count | Path |
+| --- | --- | --- |
+| Banks | 41 | `public/symbols/{svg,png}/<slug>.*` |
+| Card networks | 11 | `public/cards/{svg,png}/<slug>.*` |
+| UPI & payment apps | 67 | `public/upi/{svg,png}/<slug>.*` |
+
+The full set is also available as a single zip from the **Download all logos** button on the site (served from `/download`).
+
+## Using the logos
+
+Reference a logo by its category folder and slug. Slugs and display names live in [`data/logos.json`](data/logos.json).
+
+```
+/symbols/svg/sbin.svg        State Bank of India
+/cards/svg/rupay.svg         RuPay
+/upi/png/phonepe.png         PhonePe
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bank slugs follow the bank's SWIFT/IFSC prefix (`hdfc`, `icic`, `sbin`); card and UPI slugs are kebab-case names (`american-express`, `google-pay`).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun install
+bun run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+Other scripts:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+bun run build     # production build (also prerenders the download zip)
+bun run lint      # biome check
+bun run format    # biome format --write
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding or updating logos
 
-## Deploy on Vercel
+Source SVGs live under `assets/<category>/<slug>.svg`. The export script rasterises each one at high density, trims transparent margins, fits it inside the padded box, and writes both a PNG and a wrapped SVG so the two match exactly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Drop the source SVG into `assets/cards/` or `assets/upi/` using the slug as the filename.
+2. Add `{ "slug", "name" }` to the matching category in `data/logos.json`.
+3. Regenerate the exports:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   bun run export          # cards + upi
+   bun run export:cards
+   bun run export:upi
+   ```
+
+   Or target any folder directly:
+
+   ```bash
+   node scripts/export-symbols.mjs --in <dir> --out <dir> [--size 300] [--padding 30]
+   ```
+
+Bank symbols come pre-exported from [praveenpuglia/indian-banks](https://github.com/praveenpuglia/indian-banks) and are checked in under `public/symbols/`.
+
+A logo listed in `logos.json` with no file under `public/` shows as *pending* on the site and is left out of the zip, so it's safe to add entries ahead of the artwork.
+
+## Project layout
+
+```
+app/
+  page.js               gallery, built from data/logos.json
+  bg-picker.js          client-side canvas colour picker
+  download/route.js     static zip of every exported logo
+assets/                 source SVGs (cards, upi)
+data/logos.json         categories, slugs, names, asset paths
+public/                 exported svg + png per category
+scripts/
+  export-symbols.mjs    trim → fit → centre exporter
+```
+
+Built with Next.js and Tailwind CSS.
+
+## License
+
+[MIT](LICENSE) for the packaging and export work in this repository. Logos and trademarks remain the property of their respective owners and are provided for identification purposes only.
+
+Made by [John Thachil](https://johnthachil.com).
