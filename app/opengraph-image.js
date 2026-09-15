@@ -31,6 +31,18 @@ const olive = {
   50: "#fbfbf9",
 };
 
+// The wordmark's text is black in the file; recolour it for the dark card.
+async function brandLogoDataUri() {
+  const svg = await readFile(
+    path.join(process.cwd(), "public", "logo.svg"),
+    "utf8",
+  );
+  const light = svg
+    .replace('fill="black"', `fill="${olive[50]}"`)
+    .replace('viewBox="0 0 1920 528"', 'viewBox="146 83 1614 362"');
+  return `data:image/svg+xml;base64,${Buffer.from(light).toString("base64")}`;
+}
+
 async function logoDataUri(categoryId, slug) {
   const c = categories.find((x) => x.id === categoryId);
   const href = c.assets.png.replace("{slug}", slug);
@@ -40,9 +52,10 @@ async function logoDataUri(categoryId, slug) {
 
 export default async function Image() {
   const total = categories.reduce((n, c) => n + c.items.length, 0);
-  const logos = await Promise.all(
-    FEATURED.map(([cat, slug]) => logoDataUri(cat, slug)),
-  );
+  const [brand, ...logos] = await Promise.all([
+    brandLogoDataUri(),
+    ...FEATURED.map(([cat, slug]) => logoDataUri(cat, slug)),
+  ]);
 
   return new ImageResponse(
     <div
@@ -65,8 +78,9 @@ export default async function Image() {
           padding: "56px 0 56px 64px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, fontWeight: 700 }}>
-          FinAssets
+        <div style={{ display: "flex" }}>
+          {/* biome-ignore lint/performance/noImgElement: satori renders plain <img> */}
+          <img src={brand} height={40} width={40 * (1614 / 362)} alt="" />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div

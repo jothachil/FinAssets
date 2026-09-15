@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import categories from "@/data/logos.json";
 import BgPicker from "./bg-picker";
+import Logo from "./logo";
 import ThemeToggle from "./theme-toggle";
 
 const label =
@@ -37,7 +38,9 @@ export default function Home() {
       <div className="bg-hatch" />
       <div className="border-x border-line">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
-          <span className="font-bold tracking-[-0.02em]">FinAssets</span>
+          <a href="/" aria-label="FinAssets home">
+            <Logo height={26} />
+          </a>
           <div className="flex items-center gap-6">
             <nav className="flex gap-6 text-sm text-muted">
               {sections.map((c) => (
