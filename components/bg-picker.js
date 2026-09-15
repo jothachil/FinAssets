@@ -46,7 +46,7 @@ export default function BgPicker() {
           />
         ))}
       </div>
-      <output className="text-dim">{active.name}</output>
+      <output className="hidden text-dim sm:inline">{active.name}</output>
     </div>
   );
 }

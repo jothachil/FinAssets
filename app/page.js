@@ -108,7 +108,7 @@ export default function Home() {
 
         <div className="flex items-center justify-between gap-4 border-y border-line px-4 py-5">
           <BgPicker />
-          <span className="font-mono text-[13px] text-dim">
+          <span className="shrink-0 font-mono text-[13px] whitespace-nowrap text-dim">
             {done} / {total}
           </span>
         </div>

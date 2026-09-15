@@ -448,6 +448,10 @@
         "name": "PhonePe"
       },
       {
+        "slug": "pop-upi",
+        "name": "Pop UPI"
+      },
+      {
         "slug": "punjab-and-sind-bank",
         "name": "Punjab and Sind Bank"
       },
@@ -482,6 +486,10 @@
       {
         "slug": "state-bank-of-india",
         "name": "State Bank of India"
+      },
+      {
+        "slug": "super-money",
+        "name": "super.money"
       },
       {
         "slug": "tamilnad-mercantile-bank",
