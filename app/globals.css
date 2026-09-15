@@ -11,6 +11,7 @@
   --muted: var(--color-olive-600);
   --dim: var(--color-olive-500);
   --line: var(--color-olive-200);
+  --accent: var(--color-brand-600);
   --symbol-bg: #ffffff; /* runtime-adjustable via the symbol-bg picker */
 }
 
@@ -21,6 +22,22 @@
   --muted: var(--color-olive-400);
   --dim: var(--color-olive-500);
   --line: var(--color-olive-800);
+  --accent: var(--color-brand-400);
+}
+
+@theme {
+  /* Brand orange, used for the accent */
+  --color-brand-50: #fff4ec;
+  --color-brand-100: #ffe6d3;
+  --color-brand-200: #ffc8a5;
+  --color-brand-300: #ffa26d;
+  --color-brand-400: #ff7032;
+  --color-brand-500: #ff490a;
+  --color-brand-600: #ff2e00;
+  --color-brand-700: #cc1c02;
+  --color-brand-800: #a1180b;
+  --color-brand-900: #82170c;
+  --color-brand-950: #460704;
 }
 
 @theme inline {
@@ -29,7 +46,7 @@
   --color-muted: var(--muted);
   --color-dim: var(--dim);
   --color-line: var(--line);
-  --color-accent: #38bdf8;
+  --color-accent: var(--accent);
 
   /* Hatched gutters either side of the content column */
   --background-image-hatch: repeating-linear-gradient(
@@ -38,6 +55,6 @@
     transparent 1px 8px
   );
 
-  --font-sans: system-ui, -apple-system, "Inter", sans-serif;
-  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, Menlo, monospace;
 }
