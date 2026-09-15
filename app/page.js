@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import categories from "@/data/logos.json";
 import BgPicker from "./bg-picker";
+import ThemeToggle from "./theme-toggle";
 
 const label =
   "block px-4 pb-2 font-mono text-xs leading-none tracking-[0.01em] text-dim";
@@ -37,13 +38,16 @@ export default function Home() {
       <div className="border-x border-line">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
           <span className="font-bold tracking-[-0.02em]">FinAssets</span>
-          <nav className="flex gap-6 text-sm text-muted">
-            {sections.map((c) => (
-              <a key={c.id} href={`#${c.id}`} className="hover:text-fg">
-                {c.id}/
-              </a>
-            ))}
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="flex gap-6 text-sm text-muted">
+              {sections.map((c) => (
+                <a key={c.id} href={`#${c.id}`} className="hover:text-fg">
+                  {c.id}/
+                </a>
+              ))}
+            </nav>
+            <ThemeToggle />
+          </div>
         </header>
 
         <section className="pt-24">

@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata = {
@@ -8,9 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scheme-dark">
+    // suppressHydrationWarning: next-themes sets the class on <html> before hydration
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-bg font-sans text-[15px] leading-normal text-fg antialiased">
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

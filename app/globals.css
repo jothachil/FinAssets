@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-@theme {
-  /* Neutrals come from Tailwind's olive scale */
-  --color-bg: var(--color-olive-950);
-  --color-fg: var(--color-olive-50);
-  --color-muted: var(--color-olive-400);
-  --color-dim: var(--color-olive-500);
+/* next-themes toggles a `dark` class on <html>; make `dark:` utilities follow it */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Neutrals come from Tailwind's olive scale; light is the default, dark overrides */
+:root {
+  color-scheme: light;
+  --bg: var(--color-olive-50);
+  --fg: var(--color-olive-950);
+  --muted: var(--color-olive-600);
+  --dim: var(--color-olive-500);
+  --line: var(--color-olive-200);
+  --symbol-bg: #ffffff; /* runtime-adjustable via the symbol-bg picker */
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: var(--color-olive-950);
+  --fg: var(--color-olive-50);
+  --muted: var(--color-olive-400);
+  --dim: var(--color-olive-500);
+  --line: var(--color-olive-800);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-line: var(--line);
   --color-accent: #38bdf8;
-  --color-line: var(--color-olive-800);
 
   /* Hatched gutters either side of the content column */
   --background-image-hatch: repeating-linear-gradient(
     -45deg,
-    var(--color-line) 0 1px,
+    var(--line) 0 1px,
     transparent 1px 8px
   );
 
   --font-sans: system-ui, -apple-system, "Inter", sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-}
-
-/* Runtime-adjustable via the symbol-bg picker */
-:root {
-  --symbol-bg: #ffffff;
 }
