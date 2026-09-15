@@ -3,12 +3,15 @@ import path from "node:path";
 import BgPicker from "@/components/bg-picker";
 import Logo from "@/components/logo";
 import LogoDialog from "@/components/logo-dialog";
+import MobileMenu from "@/components/mobile-menu";
 import ThemeToggle from "@/components/theme-toggle";
 import categories from "@/data/logos.json";
 
 const label =
   "block px-4 pb-2 font-mono text-xs leading-none tracking-[0.01em] text-dim";
 const rule = "border-t border-line";
+const REQUEST_URL =
+  "https://github.com/jothachil/finassets/issues/new?template=logo-request.yml";
 const grid =
   "grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-px border-y border-line bg-line";
 
@@ -35,15 +38,15 @@ export default function Home() {
   const done = sections.reduce((n, c) => n + c.done, 0);
 
   return (
-    <div className="grid min-h-screen grid-cols-[minmax(1.5rem,1fr)_minmax(0,1440px)_minmax(1.5rem,1fr)]">
+    <div className="grid min-h-screen grid-cols-[minmax(0.75rem,1fr)_minmax(0,1440px)_minmax(0.75rem,1fr)] sm:grid-cols-[minmax(1.5rem,1fr)_minmax(0,1440px)_minmax(1.5rem,1fr)]">
       <div className="bg-hatch" />
       <div className="border-x border-line">
-        <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
+        <header className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
           <a href="/" aria-label="FinAssets home">
             <Logo height={26} />
           </a>
-          <div className="flex items-center gap-6">
-            <nav className="flex gap-6 text-sm text-muted">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <nav className="hidden gap-6 text-sm text-muted sm:flex">
               {sections.map((c) => (
                 <a key={c.id} href={`#${c.id}`} className="hover:text-fg">
                   {c.id}/
@@ -51,6 +54,22 @@ export default function Home() {
               ))}
             </nav>
             <ThemeToggle />
+            <div className="sm:hidden">
+              <MobileMenu
+                links={sections.map((c) => ({
+                  href: `#${c.id}`,
+                  label: `${c.id}/`,
+                }))}
+                actions={[
+                  { href: "/download", label: "Download all logos" },
+                  {
+                    href: REQUEST_URL,
+                    label: "Request a logo",
+                    external: true,
+                  },
+                ]}
+              />
+            </div>
           </div>
         </header>
 
@@ -77,7 +96,7 @@ export default function Home() {
               Download all logos
             </a>
             <a
-              href="https://github.com/jothachil/finassets/issues/new?template=logo-request.yml"
+              href={REQUEST_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center border border-line px-4 py-2.5 text-sm font-medium text-muted hover:border-fg hover:text-fg"
