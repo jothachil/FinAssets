@@ -3,6 +3,7 @@ import path from "node:path";
 import categories from "@/data/logos.json";
 import BgPicker from "./bg-picker";
 import Logo from "./logo";
+import LogoDialog from "./logo-dialog";
 import ThemeToggle from "./theme-toggle";
 
 const label =
@@ -111,14 +112,12 @@ export default function Home() {
                 {c.items.map(({ slug, name, files, done }) => (
                   <figure key={slug} className="bg-bg p-3">
                     {done ? (
-                      // biome-ignore lint/performance/noImgElement: static SVGs, nothing for next/image to optimize
-                      <img
-                        src={files.svg}
-                        width={c.size[0]}
-                        height={c.size[1]}
-                        alt={`${name} logo`}
-                        loading="lazy"
-                        className={`block h-auto w-full ${aspect(c.size)} ${c.transparent ? "[background:var(--symbol-bg)]" : ""}`}
+                      <LogoDialog
+                        slug={slug}
+                        name={name}
+                        files={files}
+                        size={c.size}
+                        transparent={c.transparent}
                       />
                     ) : (
                       <div
