@@ -56,7 +56,7 @@ export default function Home() {
           </span>
           <div className={rule} />
           <h1 className="px-4 pt-2 pb-4 text-[clamp(2rem,5vw,4rem)] leading-[1] font-medium tracking-[-0.035em] text-balance">
-            Every Indian fintech logo, one place.
+            Indian fintech logos, one place.
           </h1>
           <div className={rule} />
           <p className="max-w-[60ch] px-4 pt-2 pb-6 text-lg text-muted [&_code]:font-mono [&_code]:text-[0.95em] [&_code]:text-accent">

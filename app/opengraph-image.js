@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import categories from "@/data/logos.json";
 
-export const alt = "FinAssets: every Indian fintech logo, one place";
+export const alt = "FinAssets: Indian fintech logos, one place";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -78,7 +78,7 @@ export default async function Image() {
               letterSpacing: -2.5,
             }}
           >
-            Every Indian fintech logo, one place.
+            Indian fintech logos, one place.
           </div>
           <div
             style={{
@@ -88,7 +88,8 @@ export default async function Image() {
               color: olive[400],
             }}
           >
-            Banks, card networks and UPI apps. Free to use, in svg and png.
+            Clean, consistent, ready to drop into your product. Free to use, in
+            svg and png.
           </div>
         </div>
         <div
