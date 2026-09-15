@@ -1,0 +1,519 @@
+[
+  {
+    "id": "banks",
+    "name": "Banks",
+    "description": "Scheduled commercial, small finance and payments banks",
+    "note": "300×300 · 30px padding · transparent",
+    "assets": {
+      "svg": "/symbols/svg/{slug}.svg",
+      "png": "/symbols/png/{slug}.png"
+    },
+    "size": [300, 300],
+    "transparent": true,
+    "items": [
+      {
+        "slug": "airp",
+        "name": "Airtel Payments Bank"
+      },
+      {
+        "slug": "aubl",
+        "name": "AU Small Finance Bank Limited"
+      },
+      {
+        "slug": "barb",
+        "name": "Bank of Baroda"
+      },
+      {
+        "slug": "bdbl",
+        "name": "Bandhan Bank"
+      },
+      {
+        "slug": "bkid",
+        "name": "Bank of India"
+      },
+      {
+        "slug": "cbin",
+        "name": "Central Bank of India"
+      },
+      {
+        "slug": "ciub",
+        "name": "City Union Bank"
+      },
+      {
+        "slug": "cnrb",
+        "name": "Canara Bank"
+      },
+      {
+        "slug": "csbk",
+        "name": "CSB Bank Limited"
+      },
+      {
+        "slug": "dcbl",
+        "name": "DCB Bank Limited"
+      },
+      {
+        "slug": "dlxb",
+        "name": "Dhanalakshmi Bank"
+      },
+      {
+        "slug": "esmf",
+        "name": "ESAF Small Finance Bank"
+      },
+      {
+        "slug": "fdrl",
+        "name": "Federal Bank"
+      },
+      {
+        "slug": "fino",
+        "name": "FINO Payments Bank"
+      },
+      {
+        "slug": "hdfc",
+        "name": "HDFC Bank"
+      },
+      {
+        "slug": "ibkl",
+        "name": "IDBI Bank"
+      },
+      {
+        "slug": "icic",
+        "name": "ICICI Bank Limited"
+      },
+      {
+        "slug": "idfb",
+        "name": "IDFC First Bank Limited"
+      },
+      {
+        "slug": "idib",
+        "name": "Indian Bank"
+      },
+      {
+        "slug": "indb",
+        "name": "IndusInd Bank"
+      },
+      {
+        "slug": "ioba",
+        "name": "Indian Overseas Bank"
+      },
+      {
+        "slug": "jaka",
+        "name": "Jammu and Kashmir Bank"
+      },
+      {
+        "slug": "jiop",
+        "name": "Jio Payments Bank"
+      },
+      {
+        "slug": "karb",
+        "name": "Karnataka Bank Limited"
+      },
+      {
+        "slug": "kkbk",
+        "name": "Kotak Mahindra Bank Limited"
+      },
+      {
+        "slug": "kvbl",
+        "name": "Karur Vysya Bank"
+      },
+      {
+        "slug": "mahb",
+        "name": "Bank of Maharashtra"
+      },
+      {
+        "slug": "ntbl",
+        "name": "The Nainital Bank Limited"
+      },
+      {
+        "slug": "psib",
+        "name": "Punjab and Sind Bank"
+      },
+      {
+        "slug": "punb",
+        "name": "Punjab National Bank"
+      },
+      {
+        "slug": "pytm",
+        "name": "Paytm Payments Bank"
+      },
+      {
+        "slug": "ratn",
+        "name": "RBL Bank Limited"
+      },
+      {
+        "slug": "sbin",
+        "name": "State Bank of India"
+      },
+      {
+        "slug": "scbl",
+        "name": "Standard Chartered Bank"
+      },
+      {
+        "slug": "sibl",
+        "name": "South Indian Bank"
+      },
+      {
+        "slug": "tmbl",
+        "name": "Tamilnad Mercantile Bank Limited"
+      },
+      {
+        "slug": "ubin",
+        "name": "Union Bank of India"
+      },
+      {
+        "slug": "ucba",
+        "name": "UCO Bank"
+      },
+      {
+        "slug": "ujvn",
+        "name": "Ujjivan Small Finance Bank Ltd"
+      },
+      {
+        "slug": "utib",
+        "name": "Axis Bank"
+      },
+      {
+        "slug": "yesb",
+        "name": "Yes Bank"
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "name": "Card networks",
+    "description": "Card scheme marks, 3:2 badge with white background",
+    "note": "120×80 · white badge",
+    "assets": {
+      "svg": "/cards/{slug}.svg"
+    },
+    "size": [120, 80],
+    "transparent": false,
+    "items": [
+      {
+        "slug": "visa",
+        "name": "Visa"
+      },
+      {
+        "slug": "visa-alt",
+        "name": "Visa (alt)"
+      },
+      {
+        "slug": "mastercard",
+        "name": "Mastercard"
+      },
+      {
+        "slug": "mastercard-alt",
+        "name": "Mastercard (alt)"
+      },
+      {
+        "slug": "rupay",
+        "name": "RuPay"
+      },
+      {
+        "slug": "american-express",
+        "name": "American Express"
+      },
+      {
+        "slug": "maestro",
+        "name": "Maestro"
+      },
+      {
+        "slug": "maestro-alt",
+        "name": "Maestro (alt)"
+      },
+      {
+        "slug": "diners",
+        "name": "Diners Club"
+      },
+      {
+        "slug": "discover",
+        "name": "Discover"
+      },
+      {
+        "slug": "jcb",
+        "name": "JCB"
+      }
+    ]
+  },
+  {
+    "id": "upi",
+    "name": "UPI & payment apps",
+    "description": "UPI apps, wallets, BNPL and bank mobile apps",
+    "note": "300×300 · 30px padding · transparent",
+    "assets": {
+      "svg": "/upi/svg/{slug}.svg",
+      "png": "/upi/png/{slug}.png"
+    },
+    "size": [300, 300],
+    "transparent": true,
+    "items": [
+      {
+        "slug": "aditya-birla-capital",
+        "name": "Aditya Birla Capital"
+      },
+      {
+        "slug": "airtel-payments-bank",
+        "name": "Airtel Payments Bank"
+      },
+      {
+        "slug": "amazon-pay",
+        "name": "Amazon Pay"
+      },
+      {
+        "slug": "au-small-finance-bank",
+        "name": "AU Small Finance Bank"
+      },
+      {
+        "slug": "axis-bank",
+        "name": "Axis Bank"
+      },
+      {
+        "slug": "bajaj-finserv",
+        "name": "Bajaj Finserv"
+      },
+      {
+        "slug": "bank-of-baroda",
+        "name": "Bank of Baroda"
+      },
+      {
+        "slug": "bank-of-india",
+        "name": "Bank of India"
+      },
+      {
+        "slug": "bank-of-maharashtra",
+        "name": "Bank of Maharashtra"
+      },
+      {
+        "slug": "bhim",
+        "name": "BHIM"
+      },
+      {
+        "slug": "canara-bank",
+        "name": "Canara Bank"
+      },
+      {
+        "slug": "central-bank-of-india",
+        "name": "Central Bank of India"
+      },
+      {
+        "slug": "citibank",
+        "name": "Citibank"
+      },
+      {
+        "slug": "city-union-bank",
+        "name": "City Union Bank"
+      },
+      {
+        "slug": "cred",
+        "name": "CRED"
+      },
+      {
+        "slug": "dbs-digibank",
+        "name": "DBS digibank"
+      },
+      {
+        "slug": "deutsche-bank",
+        "name": "Deutsche Bank"
+      },
+      {
+        "slug": "dhani",
+        "name": "Dhani"
+      },
+      {
+        "slug": "digikhata",
+        "name": "DigiKhata"
+      },
+      {
+        "slug": "equitas-small-finance-bank",
+        "name": "Equitas Small Finance Bank"
+      },
+      {
+        "slug": "fampay",
+        "name": "FamPay"
+      },
+      {
+        "slug": "federal-bank",
+        "name": "Federal Bank"
+      },
+      {
+        "slug": "fino-payments-bank",
+        "name": "Fino Payments Bank"
+      },
+      {
+        "slug": "flipkart",
+        "name": "Flipkart"
+      },
+      {
+        "slug": "google-pay",
+        "name": "Google Pay"
+      },
+      {
+        "slug": "groww",
+        "name": "Groww"
+      },
+      {
+        "slug": "hdfc-bank",
+        "name": "HDFC Bank"
+      },
+      {
+        "slug": "hsbc",
+        "name": "HSBC"
+      },
+      {
+        "slug": "icici-bank",
+        "name": "ICICI Bank"
+      },
+      {
+        "slug": "idbi-bank",
+        "name": "IDBI Bank"
+      },
+      {
+        "slug": "idfc-first-bank",
+        "name": "IDFC First Bank"
+      },
+      {
+        "slug": "india-post-payments-bank",
+        "name": "India Post Payments Bank"
+      },
+      {
+        "slug": "indian-bank",
+        "name": "Indian Bank"
+      },
+      {
+        "slug": "indian-overseas-bank",
+        "name": "Indian Overseas Bank"
+      },
+      {
+        "slug": "indusind-bank",
+        "name": "IndusInd Bank"
+      },
+      {
+        "slug": "jammu-and-kashmir-bank",
+        "name": "Jammu and Kashmir Bank"
+      },
+      {
+        "slug": "jio-payments-bank",
+        "name": "Jio Payments Bank"
+      },
+      {
+        "slug": "jupiter",
+        "name": "Jupiter"
+      },
+      {
+        "slug": "karnataka-bank",
+        "name": "Karnataka Bank"
+      },
+      {
+        "slug": "karur-vysya-bank",
+        "name": "Karur Vysya Bank"
+      },
+      {
+        "slug": "kiwi",
+        "name": "Kiwi"
+      },
+      {
+        "slug": "kotak-mahindra-bank",
+        "name": "Kotak Mahindra Bank"
+      },
+      {
+        "slug": "makemytrip",
+        "name": "MakeMyTrip"
+      },
+      {
+        "slug": "mobikwik",
+        "name": "MobiKwik"
+      },
+      {
+        "slug": "navi",
+        "name": "Navi"
+      },
+      {
+        "slug": "niyo-global",
+        "name": "Niyo Global"
+      },
+      {
+        "slug": "nsdl-payments-bank",
+        "name": "NSDL Payments Bank"
+      },
+      {
+        "slug": "omnicard",
+        "name": "OmniCard"
+      },
+      {
+        "slug": "paytm",
+        "name": "Paytm"
+      },
+      {
+        "slug": "phonepe",
+        "name": "PhonePe"
+      },
+      {
+        "slug": "punjab-and-sind-bank",
+        "name": "Punjab and Sind Bank"
+      },
+      {
+        "slug": "punjab-national-bank",
+        "name": "Punjab National Bank"
+      },
+      {
+        "slug": "rbl-bank",
+        "name": "RBL Bank"
+      },
+      {
+        "slug": "samsung-pay",
+        "name": "Samsung Pay"
+      },
+      {
+        "slug": "shriram-one",
+        "name": "Shriram One"
+      },
+      {
+        "slug": "slice",
+        "name": "slice"
+      },
+      {
+        "slug": "south-indian-bank",
+        "name": "South Indian Bank"
+      },
+      {
+        "slug": "standard-chartered",
+        "name": "Standard Chartered"
+      },
+      {
+        "slug": "state-bank-of-india",
+        "name": "State Bank of India"
+      },
+      {
+        "slug": "tamilnad-mercantile-bank",
+        "name": "Tamilnad Mercantile Bank"
+      },
+      {
+        "slug": "tata-neu",
+        "name": "Tata Neu"
+      },
+      {
+        "slug": "timepay",
+        "name": "TimePay"
+      },
+      {
+        "slug": "uco-bank",
+        "name": "UCO Bank"
+      },
+      {
+        "slug": "ultracash",
+        "name": "UltraCash"
+      },
+      {
+        "slug": "union-bank-of-india",
+        "name": "Union Bank of India"
+      },
+      {
+        "slug": "whatsapp",
+        "name": "WhatsApp"
+      },
+      {
+        "slug": "yes-bank",
+        "name": "Yes Bank"
+      }
+    ]
+  }
+]
