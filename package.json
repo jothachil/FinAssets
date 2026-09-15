@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "export:upi": "node scripts/export-symbols.mjs --in assets/upi --out public/upi"
+    "export:upi": "node scripts/export-symbols.mjs --in assets/upi --out public/upi",
+    "export:cards": "node scripts/export-symbols.mjs --in assets/cards --out public/cards",
+    "export": "bun run export:cards && bun run export:upi"
   },
   "dependencies": {
     "fflate": "^0.8.3",

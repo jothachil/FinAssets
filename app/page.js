@@ -7,7 +7,7 @@ const label =
   "block px-4 pb-2 font-mono text-xs leading-none tracking-[0.01em] text-dim";
 const rule = "border-t border-line";
 const grid =
-  "grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-px border-b border-line bg-line";
+  "grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-px border-y border-line bg-line";
 
 // Tailwind needs static class names, so map the category's size to a ratio class.
 const aspect = ([w, h]) => (w === h ? "aspect-square" : "aspect-[3/2]");
@@ -32,7 +32,7 @@ export default function Home() {
   const done = sections.reduce((n, c) => n + c.done, 0);
 
   return (
-    <div className="grid min-h-screen grid-cols-[minmax(1.5rem,1fr)_minmax(0,1280px)_minmax(1.5rem,1fr)]">
+    <div className="grid min-h-screen grid-cols-[minmax(1.5rem,1fr)_minmax(0,1440px)_minmax(1.5rem,1fr)]">
       <div className="bg-hatch" />
       <div className="border-x border-line">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
@@ -56,10 +56,9 @@ export default function Home() {
           </h1>
           <div className={rule} />
           <p className="max-w-[60ch] px-4 pt-2 pb-6 text-lg text-muted [&_code]:font-mono [&_code]:text-[0.95em] [&_code]:text-accent">
-            Banks, card networks and UPI apps. Bank and app symbols are trimmed,
-            centred and exported as <code>svg</code> and <code>png</code> on a
-            300×300 canvas with identical padding; card marks ship as 120×80
-            badges.
+            Clean, consistent logos for every Indian bank, card network and UPI
+            app, ready to drop into your product. Free to use, available as{" "}
+            <code>svg</code> and <code>png</code>.
           </p>
           <div className="px-4 pb-8">
             <a
@@ -98,7 +97,7 @@ export default function Home() {
               {/* 1px gaps painted with the line colour so every cell is ruled */}
               <div className={grid}>
                 {c.items.map(({ slug, name, files, done }) => (
-                  <figure key={slug} className="bg-bg p-5">
+                  <figure key={slug} className="bg-bg p-3">
                     {done ? (
                       // biome-ignore lint/performance/noImgElement: static SVGs, nothing for next/image to optimize
                       <img
@@ -116,12 +115,15 @@ export default function Home() {
                         pending
                       </div>
                     )}
-                    <figcaption className="mt-4 flex flex-col gap-[0.35rem]">
-                      <strong className="text-sm font-medium tracking-[-0.01em]">
+                    <figcaption className="mt-3 flex flex-col gap-1">
+                      <strong
+                        title={name}
+                        className="truncate text-xs font-medium tracking-[-0.01em]"
+                      >
                         {name}
                       </strong>
-                      <span className="flex items-baseline justify-between font-mono text-xs text-dim">
-                        <code>{slug}</code>
+                      <span className="flex items-baseline justify-between gap-2 font-mono text-[11px] text-dim">
+                        <code className="truncate">{slug}</code>
                         {done ? (
                           <span className="flex gap-3">
                             {c.formats.map((f) => (
@@ -146,8 +148,36 @@ export default function Home() {
           ))}
         </main>
 
-        <footer className="px-4 pt-8 pb-16 font-mono text-xs text-dim">
-          bank symbols exported by scripts/export-symbols.mjs
+        <footer className="flex items-center justify-between gap-4 px-4 pt-8 pb-16 font-mono text-xs text-dim">
+          <span>
+            made by{" "}
+            <a
+              href="https://johnthachil.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-fg"
+            >
+              John Thachil
+            </a>
+          </span>
+          <span className="flex gap-4">
+            <a
+              href="https://github.com/jothachil/fin-logos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-fg"
+            >
+              github
+            </a>
+            <a
+              href="https://github.com/jothachil/fin-logos/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-fg"
+            >
+              MIT license
+            </a>
+          </span>
         </footer>
       </div>
       <div className="bg-hatch" />

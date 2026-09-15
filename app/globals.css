@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0f1c;
-  --color-fg: #ffffff;
-  --color-muted: #8b94a7;
-  --color-dim: #5b6478;
+  /* Neutrals come from Tailwind's olive scale */
+  --color-bg: var(--color-olive-950);
+  --color-fg: var(--color-olive-50);
+  --color-muted: var(--color-olive-400);
+  --color-dim: var(--color-olive-500);
   --color-accent: #38bdf8;
-  --color-line: rgba(255, 255, 255, 0.1);
+  --color-line: var(--color-olive-800);
 
   /* Hatched gutters either side of the content column */
   --background-image-hatch: repeating-linear-gradient(

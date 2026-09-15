@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Indian Fintech Logos",
   description:
-    "Logos of Indian banks, card networks and UPI apps — trimmed, centred and exported as svg and png on one square canvas.",
+    "Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, in svg and png.",
 };
 
 export default function RootLayout({ children }) {

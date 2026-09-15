@@ -180,13 +180,14 @@
   {
     "id": "cards",
     "name": "Card networks",
-    "description": "Card scheme marks, 3:2 badge with white background",
-    "note": "120×80 · white badge",
+    "description": "Card scheme marks",
+    "note": "300×300 · 30px padding · transparent",
     "assets": {
-      "svg": "/cards/{slug}.svg"
+      "svg": "/cards/svg/{slug}.svg",
+      "png": "/cards/png/{slug}.png"
     },
-    "size": [120, 80],
-    "transparent": false,
+    "size": [300, 300],
+    "transparent": true,
     "items": [
       {
         "slug": "visa",
