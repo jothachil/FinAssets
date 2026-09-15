@@ -1,4 +1,4 @@
-# fin-logos
+# FinAssets
 
 Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, available as `svg` and `png`.
 

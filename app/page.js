@@ -36,7 +36,7 @@ export default function Home() {
       <div className="bg-hatch" />
       <div className="border-x border-line">
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-line bg-bg/90 px-4 py-5 backdrop-blur">
-          <span className="font-bold tracking-[-0.02em]">fin-logos</span>
+          <span className="font-bold tracking-[-0.02em]">FinAssets</span>
           <nav className="flex gap-6 text-sm text-muted">
             {sections.map((c) => (
               <a key={c.id} href={`#${c.id}`} className="hover:text-fg">
@@ -63,7 +63,7 @@ export default function Home() {
           <div className="px-4 pb-8">
             <a
               href="/download"
-              download="fin-logos.zip"
+              download="finassets.zip"
               className="inline-flex items-center gap-3 bg-fg px-4 py-2.5 text-sm font-medium text-bg hover:bg-fg/90"
             >
               Download all logos
@@ -162,7 +162,7 @@ export default function Home() {
           </span>
           <span className="flex gap-4">
             <a
-              href="https://github.com/jothachil/fin-logos"
+              href="https://github.com/jothachil/finassets"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-fg"
@@ -170,7 +170,7 @@ export default function Home() {
               github
             </a>
             <a
-              href="https://github.com/jothachil/fin-logos/blob/main/LICENSE"
+              href="https://github.com/jothachil/finassets/blob/main/LICENSE"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-fg"

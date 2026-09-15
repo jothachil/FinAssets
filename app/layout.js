@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Indian Fintech Logos",
+  title: "FinAssets",
   description:
     "Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, in svg and png.",
 };

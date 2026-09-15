@@ -40,7 +40,7 @@ export function GET() {
   return new Response(zipped, {
     headers: {
       "Content-Type": "application/zip",
-      "Content-Disposition": 'attachment; filename="fin-logos.zip"',
+      "Content-Disposition": 'attachment; filename="finassets.zip"',
     },
   });
 }
