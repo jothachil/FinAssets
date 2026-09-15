@@ -41,6 +41,10 @@ bun run lint      # biome check
 bun run format    # biome format --write
 ```
 
+## Requesting or contributing a logo
+
+Missing a logo? Open a [logo request](https://github.com/jothachil/finassets/issues/new?template=logo-request.yml). Have the SVG already? See [CONTRIBUTING.md](CONTRIBUTING.md) for the PR flow.
+
 ## Adding or updating logos
 
 Source SVGs live under `assets/<category>/<slug>.svg`. The export script rasterises each one at high density, trims transparent margins, fits it inside the padded box, and writes both a PNG and a wrapped SVG so the two match exactly.
@@ -60,8 +64,6 @@ Source SVGs live under `assets/<category>/<slug>.svg`. The export script rasteri
    ```bash
    node scripts/export-symbols.mjs --in <dir> --out <dir> [--size 300] [--padding 30]
    ```
-
-Bank symbols come pre-exported from [praveenpuglia/indian-banks](https://github.com/praveenpuglia/indian-banks) and are checked in under `public/symbols/`.
 
 A logo listed in `logos.json` with no file under `public/` shows as *pending* on the site and is left out of the zip, so it's safe to add entries ahead of the artwork.
 

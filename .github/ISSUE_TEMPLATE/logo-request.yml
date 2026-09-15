@@ -1,0 +1,46 @@
+name: Logo request
+description: Ask for a bank, card network or payment app logo to be added
+title: "[Logo] "
+labels: ["logo-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping grow FinAssets. Fill in what you can; an official SVG source makes the request much faster to fulfil.
+  - type: input
+    id: name
+    attributes:
+      label: Brand name
+      description: The official name as it should appear on the site
+      placeholder: e.g. Kotak Mahindra Bank
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Bank
+        - Card network
+        - UPI / payment app
+        - Other (explain below)
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Official website
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link to an official logo (SVG preferred)
+      description: Brand/press page, media kit, or a page where the SVG is served
+      placeholder: https://
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Alternate marks, colour variants, or why this one matters

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Submit a logo yourself
+    url: https://github.com/jothachil/finassets/blob/main/CONTRIBUTING.md
+    about: Already have the SVG? Open a pull request following the contributing guide.

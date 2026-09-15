@@ -60,7 +60,7 @@ export default function Home() {
             app, ready to drop into your product. Free to use, available as{" "}
             <code>svg</code> and <code>png</code>.
           </p>
-          <div className="px-4 pb-8">
+          <div className="flex flex-wrap items-center gap-3 px-4 pb-8">
             <a
               href="/download"
               download="finassets.zip"
@@ -70,6 +70,14 @@ export default function Home() {
               <span className="font-mono text-xs font-normal opacity-60">
                 {done} logos · svg + png · zip
               </span>
+            </a>
+            <a
+              href="https://github.com/jothachil/finassets/issues/new?template=logo-request.yml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center border border-line px-4 py-2.5 text-sm font-medium text-muted hover:border-fg hover:text-fg"
+            >
+              Request a logo
             </a>
           </div>
         </section>
@@ -106,7 +114,7 @@ export default function Home() {
                         height={c.size[1]}
                         alt={`${name} logo`}
                         loading="lazy"
-                        className={`block h-auto w-full ${aspect(c.size)} ${c.transparent ? "bg-(--symbol-bg)" : ""}`}
+                        className={`block h-auto w-full ${aspect(c.size)} ${c.transparent ? "[background:var(--symbol-bg)]" : ""}`}
                       />
                     ) : (
                       <div

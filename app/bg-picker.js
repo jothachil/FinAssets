@@ -2,30 +2,51 @@
 
 import { useState } from "react";
 
-const DEFAULT = "#ffffff";
+// Six canvas backgrounds to preview logos against. "transparent" shows a
+// checkerboard so the padding is visible.
+const SWATCHES = [
+  { name: "white", value: "#ffffff" },
+  { name: "paper", value: "#f2f1ec" },
+  { name: "grey", value: "#c9c8c1" },
+  { name: "slate", value: "#3a3a36" },
+  { name: "black", value: "#0e0e0c" },
+  {
+    name: "transparent",
+    value:
+      "repeating-conic-gradient(#8a8a84 0% 25%, #c9c8c1 0% 50%) 50% / 16px 16px",
+  },
+];
 
 export default function BgPicker() {
-  const [value, setValue] = useState(DEFAULT);
+  const [active, setActive] = useState(SWATCHES[0]);
 
-  function onInput(e) {
-    const next = e.target.value;
-    setValue(next);
-    document.documentElement.style.setProperty("--symbol-bg", next);
+  function pick(swatch) {
+    setActive(swatch);
+    document.documentElement.style.setProperty("--symbol-bg", swatch.value);
   }
 
   return (
-    <label className="inline-flex items-center gap-[0.6rem] font-mono text-[13px] text-muted">
-      symbol-bg{" "}
-      <input
-        type="color"
-        id="bg"
-        value={value}
-        onInput={onInput}
-        className="h-6 w-8 cursor-pointer rounded-none border border-line bg-transparent p-0 [&::-webkit-color-swatch-wrapper]:p-0 [&::-webkit-color-swatch]:border-0"
-      />{" "}
-      <output htmlFor="bg" className="text-dim">
-        {value}
-      </output>
-    </label>
+    <div className="inline-flex items-center gap-3 font-mono text-[13px] whitespace-nowrap text-muted">
+      background
+      <div className="flex gap-1.5">
+        {SWATCHES.map((s) => (
+          <button
+            key={s.name}
+            type="button"
+            aria-pressed={s === active}
+            aria-label={s.name}
+            title={s.name}
+            onClick={() => pick(s)}
+            style={{ background: s.value }}
+            className={`h-5 w-5 cursor-pointer border ${
+              s === active
+                ? "border-fg ring-1 ring-fg ring-offset-1 ring-offset-bg"
+                : "border-line hover:border-muted"
+            }`}
+          />
+        ))}
+      </div>
+      <output className="text-dim">{active.name}</output>
+    </div>
   );
 }
