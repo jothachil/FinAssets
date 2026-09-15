@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "export:upi": "node scripts/export-symbols.mjs --in assets/upi --out public/upi",
+    "export:upi": "node scripts/export-symbols.mjs --in assets/upi --out public/upi --padding 54",
     "export:cards": "node scripts/export-symbols.mjs --in assets/cards --out public/cards",
-    "export": "bun run export:cards && bun run export:upi"
+    "export": "bun run export:banks && bun run export:cards && bun run export:upi",
+    "export:banks": "node scripts/export-symbols.mjs --in assets/banks --out public/symbols --padding 54"
   },
   "dependencies": {
     "fflate": "^0.8.3",

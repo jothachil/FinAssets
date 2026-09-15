@@ -2,7 +2,7 @@
 
 Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, available as `svg` and `png`.
 
-Every logo is trimmed, centred and exported on a 300×300 transparent canvas with 30px padding, so any two line up pixel for pixel.
+Every logo is trimmed, centred and exported on a 300×300 transparent canvas with consistent padding (54px for banks and UPI apps, 30px for card badges), so logos within a category line up pixel for pixel.
 
 | Category | Count | Path |
 | --- | --- | --- |
@@ -49,12 +49,13 @@ Missing a logo? Open a [logo request](https://github.com/jothachil/finassets/iss
 
 Source SVGs live under `assets/<category>/<slug>.svg`. The export script rasterises each one at high density, trims transparent margins, fits it inside the padded box, and writes both a PNG and a wrapped SVG so the two match exactly.
 
-1. Drop the source SVG into `assets/cards/` or `assets/upi/` using the slug as the filename.
+1. Drop the source SVG into `assets/banks/`, `assets/cards/` or `assets/upi/` using the slug as the filename.
 2. Add `{ "slug", "name" }` to the matching category in `data/logos.json`.
 3. Regenerate the exports:
 
    ```bash
-   bun run export          # cards + upi
+   bun run export          # banks + cards + upi
+   bun run export:banks
    bun run export:cards
    bun run export:upi
    ```
@@ -74,7 +75,7 @@ app/
   page.js               gallery, built from data/logos.json
   bg-picker.js          client-side canvas colour picker
   download/route.js     static zip of every exported logo
-assets/                 source SVGs (cards, upi)
+assets/                 source SVGs (banks, cards, upi)
 data/logos.json         categories, slugs, names, asset paths
 public/                 exported svg + png per category
 scripts/

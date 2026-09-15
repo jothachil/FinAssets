@@ -8,7 +8,7 @@ Open a [logo request](https://github.com/jothachil/finassets/issues/new?template
 
 1. Get the SVG from an official source (brand page, press kit, media assets). Avoid tracing or redrawing marks.
 2. Pick a slug: lowercase, kebab-case, no suffixes (`google-pay`, not `googlepay-square`).
-3. Save it as `assets/<category>/<slug>.svg`, where `<category>` is `cards` or `upi`. It should have a transparent background; padding doesn't matter, the exporter trims it.
+3. Save it as `assets/<category>/<slug>.svg`, where `<category>` is `banks`, `cards` or `upi`. It should have a transparent background; padding doesn't matter, the exporter trims it.
 4. Add `{ "slug": "...", "name": "..." }` to the matching category in `data/logos.json`, keeping the list alphabetical by slug.
 5. Run the exporter and check the result on the site:
 

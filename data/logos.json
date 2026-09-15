@@ -3,7 +3,7 @@
     "id": "banks",
     "name": "Banks",
     "description": "Scheduled commercial, small finance and payments banks",
-    "note": "300×300 · 30px padding · transparent",
+    "note": "300×300 · 54px padding · transparent",
     "assets": {
       "svg": "/symbols/svg/{slug}.svg",
       "png": "/symbols/png/{slug}.png"
@@ -239,7 +239,7 @@
     "id": "upi",
     "name": "UPI & payment apps",
     "description": "UPI apps, wallets, BNPL and bank mobile apps",
-    "note": "300×300 · 30px padding · transparent",
+    "note": "300×300 · 54px padding · transparent",
     "assets": {
       "svg": "/upi/svg/{slug}.svg",
       "png": "/upi/png/{slug}.png"
