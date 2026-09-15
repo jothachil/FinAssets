@@ -7,7 +7,27 @@ const button =
   "inline-flex h-9 cursor-pointer items-center justify-center px-4 text-sm font-medium";
 
 // Wraps a grid tile so clicking it opens a preview with download / copy actions.
-export default function LogoDialog({ slug, name, files, size, transparent }) {
+const REPO = "https://github.com/jothachil/finassets";
+
+// Pre-fills the "Logo issue" form on GitHub for this specific logo.
+function issueUrl({ slug, name, category }) {
+  const params = new URLSearchParams({
+    template: "logo-issue.yml",
+    title: `[Logo issue] ${name} (${slug})`,
+    slug,
+    category,
+  });
+  return `${REPO}/issues/new?${params}`;
+}
+
+export default function LogoDialog({
+  slug,
+  name,
+  category,
+  files,
+  size,
+  transparent,
+}) {
   const [copied, setCopied] = useState(false);
   const canvas = transparent ? "[background:var(--symbol-bg)]" : "";
   const fileName = `${slug}.svg`;
@@ -68,21 +88,31 @@ export default function LogoDialog({ slug, name, files, size, transparent }) {
                 </Dialog.Description>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={files.png}
+                    download={`${slug}.png`}
+                    className={`${button} bg-fg text-bg hover:bg-fg/90`}
+                  >
+                    Download png
+                  </a>
+                  <button
+                    type="button"
+                    onClick={copySvg}
+                    className={`${button} border border-line text-muted hover:border-fg hover:text-fg`}
+                  >
+                    {copied ? "Copied" : "Copy svg"}
+                  </button>
+                </div>
                 <a
-                  href={files.png}
-                  download={`${slug}.png`}
-                  className={`${button} bg-fg text-bg hover:bg-fg/90`}
+                  href={issueUrl({ slug, name, category })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start font-mono text-xs text-dim underline-offset-4 hover:text-fg hover:underline"
                 >
-                  Download png
+                  Report an issue with this logo
                 </a>
-                <button
-                  type="button"
-                  onClick={copySvg}
-                  className={`${button} border border-line text-muted hover:border-fg hover:text-fg`}
-                >
-                  {copied ? "Copied" : "Copy svg"}
-                </button>
               </div>
             </div>
           </div>

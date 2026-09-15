@@ -1,0 +1,41 @@
+name: Logo issue
+description: Report a problem with an existing logo (wrong mark, outdated, bad quality, wrong name)
+title: "[Logo issue] "
+labels: ["logo-issue"]
+body:
+  - type: input
+    id: slug
+    attributes:
+      label: Logo slug
+      description: The slug shown under the logo on the site, e.g. `sbin` or `google-pay`
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - banks
+        - cards
+        - upi
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What's wrong
+      options:
+        - Outdated logo (brand has changed)
+        - Wrong logo (not this brand)
+        - Wrong name or slug
+        - Rendering / quality problem
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should it look like instead? A link to the official logo helps a lot.
+    validations:
+      required: true
