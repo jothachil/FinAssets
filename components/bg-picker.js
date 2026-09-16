@@ -7,7 +7,6 @@ import { useState } from "react";
 const SWATCHES = [
   { name: "white", value: "#ffffff" },
   { name: "paper", value: "#f2f1ec" },
-  { name: "grey", value: "#c9c8c1" },
   { name: "slate", value: "#3a3a36" },
   { name: "black", value: "#0e0e0c" },
   {

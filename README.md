@@ -1,5 +1,7 @@
 # FinAssets
 
+![FinAssets: Indian fintech logos, one place](public/og.png)
+
 Clean, consistent logos for every Indian bank, card network and UPI app. Free to use, available as `svg` and `png`.
 
 Every logo is trimmed, centred and exported on a 300×300 transparent canvas with consistent padding (54px for banks and UPI apps, 30px for card badges), so logos within a category line up pixel for pixel.
