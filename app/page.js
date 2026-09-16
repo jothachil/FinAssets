@@ -1,8 +1,7 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
-import BgPicker from "@/components/bg-picker";
 import Logo from "@/components/logo";
-import LogoDialog from "@/components/logo-dialog";
+import Gallery from "@/components/gallery";
 import MobileMenu from "@/components/mobile-menu";
 import ThemeToggle from "@/components/theme-toggle";
 import categories from "@/data/logos.json";
@@ -12,12 +11,6 @@ const label =
 const rule = "border-t border-line";
 const REQUEST_URL =
   "https://github.com/jothachil/finassets/issues/new?template=logo-request.yml";
-const grid =
-  "grid grid-cols-[repeat(auto-fill,minmax(128px,1fr))] gap-px border-y border-line bg-line";
-
-// Tailwind needs static class names, so map the category's size to a ratio class.
-const aspect = ([w, h]) => (w === h ? "aspect-square" : "aspect-[3/2]");
-
 // Category asset templates ("/cards/{slug}.svg") → public URL / disk path.
 const url = (template, slug) => template.replace("{slug}", slug);
 const onDisk = (href) => existsSync(path.join(process.cwd(), "public", href));
@@ -32,7 +25,13 @@ export default function Home() {
       // A logo is "done" once its SVG actually exists under public/.
       return { ...i, files, done: onDisk(files.svg) };
     });
-    return { ...c, formats, items, done: items.filter((i) => i.done).length };
+    return {
+      ...c,
+      formats,
+      items,
+      total: items.length,
+      done: items.filter((i) => i.done).length,
+    };
   });
   const total = sections.reduce((n, c) => n + c.items.length, 0);
   const done = sections.reduce((n, c) => n + c.done, 0);
@@ -106,85 +105,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="flex items-center justify-between gap-4 border-y border-line px-4 py-5">
-          <BgPicker />
-          <span className="shrink-0 font-mono text-[13px] whitespace-nowrap text-dim">
-            {done} / {total}
-          </span>
-        </div>
-
-        <main>
-          {sections.map((c) => (
-            <section key={c.id} id={c.id} className="scroll-mt-16">
-              <div className="flex items-baseline justify-between gap-4 px-4 pt-10 ">
-                <h2 className="text-xl font-medium tracking-[-0.02em]">
-                  {c.name}
-                </h2>
-                <span className="flex items-baseline gap-4 font-mono text-[13px] whitespace-nowrap text-dim">
-                  <a
-                    href={`/download/${c.id}`}
-                    download={`finassets-${c.id}.zip`}
-                    className="text-muted hover:text-fg"
-                  >
-                    download zip
-                  </a>
-                  {c.done} / {c.items.length}
-                </span>
-              </div>
-              <p className="px-4 pb-4 text-sm text-muted">{c.description}</p>
-
-              {/* 1px gaps painted with the line colour so every cell is ruled */}
-              <div className={grid}>
-                {c.items.map(({ slug, name, files, done }) => (
-                  <figure key={slug} className="bg-bg p-3">
-                    {done ? (
-                      <LogoDialog
-                        slug={slug}
-                        name={name}
-                        category={c.id}
-                        files={files}
-                        size={c.size}
-                        transparent={c.transparent}
-                      />
-                    ) : (
-                      <div
-                        className={`flex w-full items-center justify-center border border-dashed border-line font-mono text-xs text-dim ${aspect(c.size)}`}
-                      >
-                        pending
-                      </div>
-                    )}
-                    <figcaption className="mt-3 flex flex-col gap-1">
-                      <strong
-                        title={name}
-                        className="truncate text-xs font-medium tracking-[-0.01em]"
-                      >
-                        {name}
-                      </strong>
-                      <span className="flex items-baseline justify-between gap-2 font-mono text-[11px] text-dim">
-                        <code className="truncate">{slug}</code>
-                        {done ? (
-                          <span className="flex gap-3">
-                            {c.formats.map((f) => (
-                              <a
-                                key={f}
-                                href={files[f]}
-                                className="hover:text-accent"
-                              >
-                                {f}
-                              </a>
-                            ))}
-                          </span>
-                        ) : (
-                          <span>—</span>
-                        )}
-                      </span>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </section>
-          ))}
-        </main>
+        <Gallery sections={sections} total={total} done={done} />
 
         <footer className="flex items-center justify-between gap-4 px-4 pt-8 pb-16 font-mono text-xs text-dim">
           <span>
