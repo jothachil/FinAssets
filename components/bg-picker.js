@@ -36,7 +36,7 @@ export default function BgPicker() {
             title={s.name}
             onClick={() => pick(s)}
             style={{ background: s.value }}
-            className={`h-8 w-8 cursor-pointer border ${
+            className={`h-6 w-6 cursor-pointer border ${
               s === active
                 ? "border-fg ring-1 ring-fg ring-offset-1 ring-offset-bg"
                 : "border-line hover:border-muted"

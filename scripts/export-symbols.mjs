@@ -85,7 +85,7 @@ function parseRootSvg(source) {
     ?.trim()
     .split(/[\s,]+/)
     .map(Number);
-  if (!viewBox || viewBox.length !== 4 || viewBox.some(Number.isNaN)) {
+  if (viewBox?.length !== 4 || viewBox.some(Number.isNaN)) {
     const w = Number.parseFloat(attr("width"));
     const h = Number.parseFloat(attr("height"));
     if (!(w > 0 && h > 0)) throw new Error("no usable viewBox or width/height");
