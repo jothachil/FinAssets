@@ -23,7 +23,7 @@ export default function Search({ value, onChange, placeholder = "Search" }) {
   }, []);
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex w-full items-center">
       <IconSearch
         size={14}
         className="pointer-events-none absolute left-2.5 text-dim"
@@ -44,7 +44,7 @@ export default function Search({ value, onChange, placeholder = "Search" }) {
         aria-label="Search logos"
         autoComplete="off"
         spellCheck={false}
-        className="h-8 w-44 border border-line bg-transparent pr-8 pl-8 font-mono text-[13px] text-fg placeholder:text-dim focus:border-fg focus:outline-none sm:w-56 [&::-webkit-search-cancel-button]:hidden"
+        className="h-8 w-full border border-line bg-transparent pr-8 pl-8 font-mono text-[13px] text-fg placeholder:text-dim focus:border-fg focus:outline-none [&::-webkit-search-cancel-button]:hidden"
       />
       {value ? (
         <button

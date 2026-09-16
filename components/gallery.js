@@ -38,9 +38,9 @@ export default function Gallery({ sections, total, done }) {
   return (
     <>
       <div className="sticky top-[65px] z-10 flex items-center justify-between gap-4 border-y border-line bg-bg/90 px-4 py-4 backdrop-blur">
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex min-w-0 grow items-center gap-4 sm:gap-6">
           <Search value={query} onChange={setQuery} />
-          <div className="hidden sm:block">
+          <div className="hidden shrink-0 items-center sm:flex">
             <BgPicker />
           </div>
         </div>

@@ -25,8 +25,7 @@ export default function BgPicker() {
   }
 
   return (
-    <div className="inline-flex items-center gap-3 font-mono text-[13px] whitespace-nowrap text-muted">
-      background
+    <div className="flex items-center">
       <div className="flex gap-1.5">
         {SWATCHES.map((s) => (
           <button
@@ -37,7 +36,7 @@ export default function BgPicker() {
             title={s.name}
             onClick={() => pick(s)}
             style={{ background: s.value }}
-            className={`h-5 w-5 cursor-pointer border ${
+            className={`h-8 w-8 cursor-pointer border ${
               s === active
                 ? "border-fg ring-1 ring-fg ring-offset-1 ring-offset-bg"
                 : "border-line hover:border-muted"
@@ -45,7 +44,6 @@ export default function BgPicker() {
           />
         ))}
       </div>
-      <output className="hidden text-dim sm:inline">{active.name}</output>
     </div>
   );
 }
