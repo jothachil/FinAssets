@@ -120,7 +120,14 @@ export default function Home() {
                 <h2 className="text-xl font-medium tracking-[-0.02em]">
                   {c.name}
                 </h2>
-                <span className="font-mono text-[13px] text-dim">
+                <span className="flex items-baseline gap-4 font-mono text-[13px] whitespace-nowrap text-dim">
+                  <a
+                    href={`/download/${c.id}`}
+                    download={`finassets-${c.id}.zip`}
+                    className="text-muted hover:text-fg"
+                  >
+                    download zip
+                  </a>
                   {c.done} / {c.items.length}
                 </span>
               </div>
