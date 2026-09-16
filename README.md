@@ -10,7 +10,7 @@ Every logo is trimmed, centred and exported on a 300×300 transparent canvas wit
 | --- | --- | --- |
 | Banks | 41 | `public/symbols/{svg,png}/<slug>.*` |
 | Card networks | 11 | `public/cards/{svg,png}/<slug>.*` |
-| UPI & payment apps | 67 | `public/upi/{svg,png}/<slug>.*` |
+| UPI & payment apps | 68 | `public/upi/{svg,png}/<slug>.*` |
 
 The full set is also available as a single zip from the **Download all logos** button on the site (served from `/download`).
 
